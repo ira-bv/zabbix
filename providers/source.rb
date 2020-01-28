@@ -44,6 +44,7 @@ action :install_server do
       interpreter 'bash'
       user 'root'
       code <<-EOH
+        (cd #{source_dir} && ./bootstrap.sh)
         (cd #{source_dir} && ./configure --enable-server --prefix=#{new_resource.install_dir} #{new_resource.configure_options})
         (cd #{source_dir} && make install && touch already_built)
       EOH
@@ -62,8 +63,9 @@ action :install_agent do
       interpreter 'bash'
       user 'root'
       code <<-EOH
-      (cd #{source_dir} && ./configure --enable-agent --prefix=#{new_resource.install_dir} #{new_resource.configure_options})
-      (cd #{source_dir} && make install && touch already_built)
+        (cd #{source_dir} && ./bootstrap.sh)
+        (cd #{source_dir} && ./configure --enable-agent --prefix=#{new_resource.install_dir} #{new_resource.configure_options})
+        (cd #{source_dir} && make install && touch already_built)
       EOH
     end
     new_resource.updated_by_last_action(true)

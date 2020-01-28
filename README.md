@@ -28,7 +28,7 @@ Installing the Agent :
 
 Installing the Server :
 
-    "recipe[zabbix]",  
+    "recipe[zabbix]",
     "recipe[zabbix::server]"
 
 Installing the Database :
@@ -70,17 +70,17 @@ example :
 
 ## Server
 
-	  node.set['zabbix']['server']['branch'] = "ZABBIX%20Latest%20Stable"
-	  node.set['zabbix']['server']['version'] = "2.0.0"
-	  node.set['zabbix']['server']['source_url'] = nil
-	  ndoe.set['zabbix']['server']['install_method'] = "source"
+      node.set['zabbix']['server']['branch'] = "ZABBIX%20Latest%20Stable"
+      node.set['zabbix']['server']['version'] = "2.0.0"
+      node.set['zabbix']['server']['source_url'] = nil
+      ndoe.set['zabbix']['server']['install_method'] = "source"
 
 ## Agent
 
-	  node.set['zabbix']['agent']['branch'] = "ZABBIX%20Latest%20Stable"
-	  node.set['zabbix']['agent']['version'] = "2.0.0"
-	  node.set['zabbix']['agent']['source_url'] = nil
-	  node.set['zabbix']['agent']['install_method'] = "prebuild"
+      node.set['zabbix']['agent']['branch'] = "ZABBIX%20Latest%20Stable"
+      node.set['zabbix']['agent']['version'] = "2.0.0"
+      node.set['zabbix']['agent']['source_url'] = nil
+      node.set['zabbix']['agent']['install_method'] = "prebuild"
 
 ## Database
 
@@ -325,6 +325,10 @@ Default implementation of how to Fetch and handle the Zabbix source code.
 
 # CHANGELOG
 
+### 0.8.1
+* New sources need autoconf to build, fixed build and dependencies (Ira Abramov, tested on v4.4.4 and Ubuntu
+    18.04)
+
 ### 0.8.0
 * This version is a big change with a lot of bugfix and change. Please be careful if you are updated from previous version
 
@@ -401,7 +405,7 @@ Default implementation of how to Fetch and handle the Zabbix source code.
 ### 0.0.27
   * Configuration error about include_dir in zabbix_agentd.conf.erb
 
-###	0.0.26
+### 0.0.26
   * zabbix agent and zabbix server don't want the same include_dir, be careful if you use include_dir
   * noob error on zabbix::server
 

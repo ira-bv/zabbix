@@ -24,6 +24,9 @@ JavaGateway=<%= @java_gateway %>
 JavaGatewayPort=<%= @java_gateway_port %>
 StartJavaPollers=<%= @java_pollers %>
 StartPollers=<%= node['zabbix']['server']['start_pollers']%>
+StartPingers=<%= node['zabbix']['server']['start_pingers']%>
+StartDiscoverers=<%= node['zabbix']['server']['start_discoverers']%>
+StartPollersUnreachable=<%= node['zabbix']['server']['start_pollers_unreachable']%>
 
 ExternalScripts=<%= node['zabbix']['server']['externalscriptspath'] %>
 Timeout=<%= node['zabbix']['server']['timeout']%>

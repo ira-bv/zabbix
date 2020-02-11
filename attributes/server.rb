@@ -19,6 +19,9 @@ default['zabbix']['server']['java_gateway'] = '127.0.0.1'
 default['zabbix']['server']['java_gateway_port'] = 10_052
 default['zabbix']['server']['java_pollers'] = 0
 default['zabbix']['server']['start_pollers'] = 5
+default['zabbix']['server']['start_pollers_unreachable'] = 5
+default['zabbix']['server']['start_pingers'] = 5
+default['zabbix']['server']['start_discoverers'] = 5
 
 default['zabbix']['server']['externalscriptspath'] = '/usr/local/scripts/zabbix/externalscripts/'
 

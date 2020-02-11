@@ -41,6 +41,7 @@ action :install_server do
   unless ::File.exist?(::File.join(source_dir, 'already_built'))
     Chef::Log.info("Compiling Zabbix Server with options '#{new_resource.configure_options}")
     package 'autoconf'
+    package 'automake'
     script "install_zabbix_server_#{zabbix_source_identifier(new_resource.branch, new_resource.version)}" do
       interpreter 'bash'
       user 'root'
@@ -61,6 +62,7 @@ action :install_agent do
   unless ::File.exist?(::File.join(source_dir, 'already_built'))
     Chef::Log.info("Compiling Zabbix Agent with options '#{new_resource.configure_options}")
     package 'autoconf'
+    package 'automake'
     script "install_zabbix_agent_#{zabbix_source_identifier(new_resource.branch, new_resource.version)}" do
       interpreter 'bash'
       user 'root'

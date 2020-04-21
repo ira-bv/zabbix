@@ -12,7 +12,7 @@ include_recipe 'zabbix::agent_common'
 case node['platform']
 when 'ubuntu', 'debian'
   # install some dependencies
-  %w(fping libcurl3 libiksemel-dev libiksemel3 libsnmp-dev libiksemel-utils libcurl4-openssl-dev).each do |pck|
+  %w(fping libiksemel-dev libiksemel3 libsnmp-dev libiksemel-utils libcurl4-openssl-dev).each do |pck|
     package pck do
       action :install
     end

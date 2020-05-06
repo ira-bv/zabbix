@@ -20,4 +20,10 @@ when 'windows'
     supports :restart => true
     action :nothing
   end
+when 'systemd'
+  service 'zabbix_agentd'
+    provider Chef::Provider::Service::Systemd
+    supports :status => true, :start => true, :stop => true, :restart => true
+    action :nothing
+  end
 end

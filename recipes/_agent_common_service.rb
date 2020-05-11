@@ -26,4 +26,5 @@ when 'systemd'
     supports :status => true, :start => true, :stop => true, :restart => true
     action :nothing
   end
-end
+# end
+
